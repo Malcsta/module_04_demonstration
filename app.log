@@ -1,0 +1,12 @@
+2023-10-10 13:13:35,353 - ERROR - division by zero
+2023-10-10 13:13:35,353 - INFO - File Closed
+2023-10-10 13:13:35,353 - WARNING - Jo-Anne Sinclair's salary 140000.0 is currently above the reccomended maximum of 120000.
+2023-10-10 13:13:35,353 - WARNING - Jackson Smith's salary 130000.0 is currently above the reccomended maximum of 120000.
+2023-10-10 13:13:35,353 - WARNING - Josee Benjamin's salary 140000.0 is currently above the reccomended maximum of 120000.
+2023-10-10 13:13:35,353 - WARNING - Stien Pedersen's salary 140000.0 is currently above the reccomended maximum of 120000.
+2023-10-10 13:13:35,353 - WARNING - Cheryl Guru's salary 140000.0 is currently above the reccomended maximum of 120000.
+2023-10-10 13:13:35,353 - DEBUG - Debug level logging.
+2023-10-10 13:13:35,353 - INFO - Info level logging.
+2023-10-10 13:13:35,353 - WARNING - Warning level logging.
+2023-10-10 13:13:35,353 - ERROR - Error level logging.
+2023-10-10 13:13:35,354 - CRITICAL - Critical level logging.
