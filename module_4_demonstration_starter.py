@@ -4,49 +4,70 @@ executives at PiXELL-River Financial.  Prior to implementing this change,
 the program will see how many executives will end up with salaries greater than 
 the high-salary mark.
 Author: ACE Faculty
-Edited by: {Student Name}
-Date: {Date}
+Edited by: Malcolm White
+Date: 10/10/2023
 Usage: 
 """
+
 data = []
 new_data = []
 
 HIGH_SALARY = 120000
 RECOMMENDED_INCREASE = 0.20
-
+file = None
 
 #LECTURE SECTION 1
-file = open('module_4_dat.txt')
-data = file.readlines()
+try:  
+      file = open('module_4_dat.txt')
+      data = file.readlines()
 
-file.close()
-print("File Closed")
+      1 / 0
+
+except FileNotFoundError as e:               # Most specific to least specific order
+      print('Error opening file: ', e)
+except Exception as e:                       # Last exception
+      print('General Exception: ', e)
+finally:
+      if file is not None:                   # Will occur regardless
+            file.close()                     # If file was opened, we can still close it
+            print("File Closed")
+
 
 
 #LECTURE SECTION 2
-for record in data:
-      items = record.split(',')
-      title = items[0]
-      name = items[1]
-      salary = float(items[2])
-      
-      #LECTURE SECTION 3
-      #REQUIREMENT:  NOTE RECORDS THAT EXCEED OR WILL EXCEED HIGH_SALARY AMOUNT
-      salary *= (1 - RECOMMENDED_INCREASE)
-      new_data.append([title,name,salary])
+# CEO/Chair of Board,Jo-Anne Sinclair,140000 < format
+try:
+      if len(data) == 0:
+            raise Exception("No data exists.")
+      else: 
+            for record in data:
+                  items = record.split(',')
+                  title = items[0]
+                  name = items[1]
+                  salary = float(items[2])         # Use if / else for assignment 4
+
+                  #LECTURE SECTION 3
+                  #REQUIREMENT:  NOTE RECORDS THAT EXCEED OR WILL EXCEED HIGH_SALARY AMOUNT
+                  salary *= (1 - RECOMMENDED_INCREASE)
+                  new_data.append([title,name,salary])
+except Exception as e:
+      print(e)
 
 
 
 #LECTURE SECTION 4
-file = open('updated_salaries.txt', 'w')
-for record in new_data:
-      row = ""
-      for index, item in enumerate(record):
-            row += str(item)
-            if index < len(record) - 1:
-                  row += (",")
-      row += '\n'
-      file.write(row)
+try: 
+      file = open('updated_salaries.txt', 'w')
+      for record in new_data:
+            row = ""
+            for index, item in enumerate(record):
+                  row += str(item)
+                  if index < len(record) - 1:
+                        row += (",")
+            row += '\n'
+            file.write(row)
+except Exception as e:
+      print(e)
 
 #LECTURE SECTION 5
 print("End of Program")

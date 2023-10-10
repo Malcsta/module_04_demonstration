@@ -4,4 +4,8 @@
 Introduction to Exception Handling and Troubleshooting
 
 ## Author
-Student Name
+Malcolm White
+
+## Updates
+- 1. MW - Incorporated exception handling throughout program.
+
